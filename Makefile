@@ -1,2 +1,6 @@
 all:
-	g++ main.cpp hello.cpp factorial.cpp -o hello
+	mkdir bin
+	g++ src/main.cpp -o bin/hello
+
+clean: 
+	rm -rf bin
