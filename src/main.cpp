@@ -1,31 +1,34 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-using namespace std;
 int main () {
     int n;
     int time = 0;
-cout << "write your number ";
-cin >> n;
+std::cout << "write your number ";
+std::cin >> n;
 
 if (n == 0) {
-    cout << "error, number is equal to 0" << endl;
-    return 0;
+    std::cerr << "0 is not supported for conversion" << std::endl;
+    return 1;
+}
+if (n<0) {
+    std::cerr << "negative digits are not supported for conversion" << std::endl;
+    return 1;
 }
 
-string b;
+std::string b = "";
 while (n>0) {
     time = time + 1;
     if (n % 2 ==0) {
         b+= '0';
-        cout << " test 19 this is the result " << b << " this is the initial number " << n << endl;}
+        std::cout << " this is the result " << b << " this is the initial number " << n << std::endl;}
     else {
         b+= '1';
-        cout << "test 22 this is the result " << b << " this is the initial number " << n << endl;}
+        std::cout << " this is the result " << b << " this is the initial number " << n << std::endl;}
    n = n / 2;
-   cout << "test 24 this is the result " << b << " this is the initial number " << n << endl;     
+   std::cout << " this is the result " << b << " this is the initial number " << n << std::endl;     
 }
-reverse(b.begin(), b.end());
-cout << "result " << b << " number of cycles " << time << endl;
-return 0;
+std::reverse(b.begin(), b.end());
+std::cout << "result " << b << " number of cycles " << time << std::endl;
+return 1;
 }
