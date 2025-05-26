@@ -4,15 +4,15 @@
 int main () {
     int n;
     int time = 0;
-std::cout << "write your number ";
+std::cout << "write a positive integer (greater than 0) ";
 std::cin >> n;
 
 if (n == 0) {
     std::cerr << "0 is not supported for conversion" << std::endl;
     return 1;
 }
-if (n<0) {
-    std::cerr << "negative digits are not supported for conversion" << std::endl;
+if (n<=0) {
+    std::cerr << "Only positive digits are supported for conversion" << std::endl;
     return 1;
 }
 
